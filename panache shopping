@@ -1,0 +1,295 @@
+import java.io.*;
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+/*
+<applet code="panache1" width=1300 height=650>
+</applet>
+*/
+public class panache1 extends Applet implements ActionListener,ItemListener
+{
+ Image picture; 
+String s4;
+
+Choice choose1,choose2,choose3,choose4,choose5;
+Choice os,browser,os1,browser1,browser2;
+
+
+int n1,n2,n3,n4,n5;
+Label l1;
+
+
+TextField t1,t2,t3,t4,t5,t6;
+Button b;
+
+
+String msg = "";
+int l=0;
+int z;
+public void init() 
+{
+picture = getImage(getDocumentBase(),"12.jpg"); 
+l1=new Label("\nSWAGATAM!!\nTHE PANACHE SHOPPING MALL",Label.LEFT);
+
+setBackground(Color.cyan);
+Font myFont = new Font("TimesRoman", Font.BOLD, 18);
+setFont(myFont);
+
+
+
+t1=new TextField(10);
+t2=new TextField(10);
+t3=new TextField(10);
+t4=new TextField(10);
+t5=new TextField(10);
+t6=new TextField(40);
+
+
+os = new Choice();
+browser =  new Choice();
+os1 = new Choice();
+browser1= new Choice();
+browser2= new Choice();
+
+
+
+choose1= new Choice();
+choose2= new Choice();
+choose3= new Choice();
+choose4= new Choice();
+choose5= new Choice();
+
+
+b=new Button("calculate");
+
+
+
+os.add("PLEASE PRESS 1 TO VISIT SHOP A----for baby's care");
+os.add("PLEASE PRESS 2 TO VISIT SHOP B----for women's cosmetics");
+
+
+choose1.add("1");
+choose1.add("2");
+choose1.select(1);
+
+
+browser.add("           press 1 -------------------- johnsons baby cream--------Rs35.00");
+browser.add("           press 2 -------------------- johnsons baby powder-------Rs385.00");
+browser.add("           press 3 -------------------- johnsons baby soap---------Rs135.00");
+browser.add("           press 4 -------------------- johnsons baby oil----------Rs55.00");
+browser.add("           press 5 -------------------- johnsons baby shampoo------Rs95.00");
+browser.add("           press 6 -------------------- johnsons baby lotion-------Rs25.00");
+browser.add("           press 7 -------------------- hair oil-------------------Rs65.00");
+browser.add("           press 8 -------------------- pampers--------------------Rs95.00");
+
+
+
+choose2.add("1");
+choose2.add("2");
+choose2.add("3");
+choose2.add("4");
+choose2.add("5");
+choose2.add("6");
+choose2.add("7");
+choose2.add("8");
+
+
+os1.add("press 1 if u want 1 buy nail-polish");
+os1.add("press 2 if u want 2 buy deodrent");
+
+
+
+choose3.add("1");
+choose3.add("2");
+choose3.select(1);        
+          
+browser1.add("      1-------LAKME NAIL-POLISH--------------------Rs105.00");
+browser1.add("      2-------TIPTOE NAIL-POLISH-------------------Rs85.00");
+browser1.add("      3-------LAVISH NAIL-POLISH-------------------Rs100.00");
+browser1.add("      4-------SHINY NAIL-POLISH--------------------Rs68.00");
+browser1.add("      5------ANGEL NAIL-POLISH--------------------Rs78.00");
+
+
+
+
+
+choose4.add("1");
+choose4.add("2");
+choose4.add("3");
+choose4.add("4");
+choose4.add("5");
+
+
+
+browser2.add("    1------REXONA--------------------Rs145.00");
+browser2.add("    2------DENIM-------------------Rs105.00");
+browser2.add("    3------CHARLIE-------------------Rs90.00");
+
+
+
+choose5.add("1");
+choose5.add("2");
+choose5.add("3");
+
+
+os.addItemListener(this);
+browser.addItemListener(this);
+os1.addItemListener(this);
+browser1.addItemListener(this);
+browser2.addItemListener(this);
+choose1.addItemListener(this);
+choose2.addItemListener(this);
+choose3.addItemListener(this);
+choose4.addItemListener(this);
+choose5.addItemListener(this);
+b.addActionListener(this);
+                   
+add(l1);
+add(os);
+add(choose1);
+add(t1);
+add(browser);
+add(choose2);
+add(t2);
+add(os1);
+add(choose3);
+add(t3);
+add(browser1);
+add(choose4);
+add(t4);
+add(browser2);
+add(choose5);
+add(t5);
+add(b);
+add(t6);
+
+
+
+}
+
+
+
+public void itemStateChanged(ItemEvent ie)
+{
+repaint();
+}
+public void paint(Graphics g)
+{
+ g.drawImage(picture, 30,30,1200,1200, this);
+
+}
+
+
+public void actionPerformed(ActionEvent ae) 
+{
+
+
+String str = ae.getActionCommand();
+
+
+n1=Integer.parseInt(t1.getText());
+if(str.equals("calculate")) 
+{
+if(n1==1)
+{
+n2=Integer.parseInt(t2.getText());
+
+
+ if(n2==1)
+   
+             {  
+                 l=l+35;
+             }   
+         if(n2==2)
+             {  
+                 l=l+385;
+             }
+             
+         if(n2==3)
+             {  
+                 l=l+135;
+             }    
+          if(n2==4)
+             {  
+                 l=l+55;
+             }   
+          if(n2==5)
+             {  
+                 l=l+95;
+             }
+         if(n2==6)
+             {  
+                 l=l+25;
+             }    
+        if(n2==7)
+             {  
+                 l=l+65;
+             }     
+       if(n2==8)
+             {  
+                 l=l+95;
+             }      
+}
+else
+{
+n3=Integer.parseInt(t3.getText());
+if(n3==1)
+{
+n4=Integer.parseInt(t4.getText());
+  if(n4==1)
+   
+             {  
+                 l=l+105;
+             }   
+         if(n4==2)
+             {  
+                 l=l+85;
+             }
+             
+         if(n4==3)
+             {  
+                 l=l+100;
+             }    
+          if(n4==4)
+             {  
+                 l=l+68;
+             }   
+          if(n4==5)
+             {  
+                 l=l+78;
+             }
+
+
+}
+if(n3==2)
+{
+n5=Integer.parseInt(t5.getText());
+         if(n5==1)
+   
+             {  
+                 l=l+145;
+             }   
+         if(n5==2)
+             {  
+                 l=l+105;
+             }
+             
+         if(n5==3)
+             {  
+                 l=l+90;
+             }   
+
+
+
+}
+}
+}
+s4="you have to pay rupees "+l;
+t6.setText(s4);
+}
+}
+
+ 
+
+
